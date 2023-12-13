@@ -6,16 +6,16 @@ body {
   margin: auto;
   width: 85%;
   max-width: 1280px;
-  margin: auto;
-}
-
-section>div {
-  padding: 10px 0 40px;
 }
 
 h2 {
   font-size: 25px;
   font-weight: 500;
+}
+h2+p {
+  padding: 20px 0;
+font-size: 20px;
+font-weight: 300;
 }
 
 button {
@@ -57,8 +57,12 @@ nav li {
 
 /*main*/
 /*choice*/
-.choice h2 {
-  padding: 20px 0;
+.choice > div{
+  padding: 10px 0 80px;
+}
+
+.choice h2{
+  padding: 30px 0;
 }
 
 .grid-container {
@@ -76,13 +80,16 @@ nav li {
 .grid-container .number1{
   grid-row: 1 / span 2;
 }
+
 .grid-container .number7{
   grid-column: 4/ 5;
   grid-row: 2 / span 2;
 }
+
 .grid-item {
   position: relative;
   perspective: 1000px;
+  cursor: pointer;
 }
 
 .front,
@@ -163,17 +170,24 @@ nav li {
 /*best*/
 .best {
   align-items: center;
-  height: 100vh;
+  height: 600px;
   background-color: #f4f5fd;
 }
 
 .b_text {
   width: 30%;
-  padding-right: 30px;
+  padding: 30px;
 }
 
-.b_text h2+p {
-  padding: 20px 0;
+.b_text > a{
+  display: block;
+  width: 90px;
+  height: 34px;
+  color: #555;
+  text-align: center;
+  line-height: 34px;
+  background-color: lightblue;
+  border-radius: 5px;
 }
 
 .b_list {
@@ -212,7 +226,7 @@ nav li {
 }
 
 /*divide*/
-.divide {
+/* .divide {
   padding: 50px 0 100px;
 }
 
@@ -260,47 +274,55 @@ nav li {
 
 .divide1>p {
   padding: 210px 0 0 20px;
-}
+} */
 
 /*talk*/
 .talk {
-  background-color: rgb(234, 235, 243);
+  padding: 150px 0;
 }
 
 .talk h2+p {
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .talk ul {
   justify-content: space-between;
-  gap: 20px;
+  gap: 30px;
 }
 
 .talk li {
   position: relative;
   width: 200px;
-  height: 120px;
+  height: 200px;
   background-color: #fff;
   border-radius: 20px;
+  box-shadow: 1px 1px 15px -10px #333;
 }
+
 
 .talk li a {
   display: block;
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 25px;
+  font-weight: 300;
+}
+
+.talk li p{
+  font-size: 18px;
+  font-weight: 300;
 }
 
 .talk li span {
   position: absolute;
-  left: 10%;
+  left: 25px;
   top: 70%;
   font-size: 14px;
 }
 
 /*news*/
 .news {
-  padding: 100px 50px;
+  padding: 100px 0;
   background-color: rgb(246, 247, 251);
   word-break: keep-all;
   line-height: 18px;
@@ -312,7 +334,7 @@ nav li {
 }
 
 .news ul {
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 50px;
 }
@@ -381,7 +403,8 @@ nav li {
 
 /*footer*/
 footer {
-  height: 100px;
+  height: 140px;
+  padding: 20px 0;
   color: #fff;
   background-color: rgb(88, 89, 101);
   line-height: 50px;
