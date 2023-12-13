@@ -1,0 +1,400 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.inner {
+  margin: auto;
+  width: 85%;
+  max-width: 1280px;
+  margin: auto;
+}
+
+section>div {
+  padding: 10px 0 40px;
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+button {
+  background-color: transparent;
+}
+
+/*header*/
+.h_top {
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.h_top li {
+  padding-left: 20px;
+}
+
+.gnb {
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  height: 40px;
+}
+
+.gnb>a {
+  display: none;
+}
+
+nav li {
+  padding-right: 50px;
+}
+
+.gnb button {
+  display: none;
+}
+
+.gnb>p>a img {
+  width: 40px;
+}
+
+/*main*/
+/*choice*/
+.choice h2 {
+  padding: 20px 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  gap: 30px;
+  height: 100vh;
+}
+
+.grid-container {
+  height: auto;
+}
+
+.grid-container .number1{
+  grid-row: 1 / span 2;
+}
+.grid-container .number7{
+  grid-column: 4/ 5;
+  grid-row: 2 / span 2;
+}
+.grid-item {
+  position: relative;
+  perspective: 1000px;
+}
+
+.front,
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 8%;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  transition: all 0.5s;
+}
+
+.front {
+  z-index: 2;
+  background-color: rgba(90,153,207,0.8);
+  background-repeat: no-repeat;
+  background-position: 80% 80%;
+  background-size: 100px;
+}
+
+.back {
+  background-color: rgba(255,192,201,0.5);
+  transform: rotateY(180deg);
+}
+
+.grid-item:hover .front {
+  transform: rotateY(180deg);
+}
+
+.grid-item:hover .back {
+  transform: rotateY(0deg);
+}
+
+.item1 {
+  background-image: url(../images/choice/free-icon-bipolar-9999778.png)  ;
+}
+
+.item2 {
+  background-image: url(../images/choice/free-icon-pathways-9601947.png);
+}
+
+.item3 {
+  background-image: url(../images/choice/free-icon-rorschach-test-7198702.png);
+
+}
+
+.item4 {
+  background-image: url(../images/choice/free-icon-job-transition-70005.png);
+}
+
+.item5 {
+  background-image: url(../images/choice/free-icon-depression-3764781.png);
+}
+
+.item6 {
+  background-image: url(../images/choice/free-icon-communication-6106749.png) ;
+}
+
+.item7 {
+  background-image: url(../images/choice/free-icon-game-console-2949874.png);
+}
+
+.item8 {
+  background-image: url(../images/choice/free-icon-interpersonal-6553989.png);
+}
+
+.item9 {
+  background-image: url(../images/choice/free-icon-love-9037453.png);
+}
+
+.item10 {
+  background-image: url(../images/choice/free-icon-stress-6819628.png);
+}
+
+/*best*/
+.best {
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f5fd;
+}
+
+.b_text {
+  width: 30%;
+  padding-right: 30px;
+}
+
+.b_text h2+p {
+  padding: 20px 0;
+}
+
+.b_list {
+  width: 70%;
+}
+
+.b_list .b_list1 {
+  width: 230px;
+  height: 300px;
+  margin-right: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 15px -13px #333;
+  text-align: center;
+  line-height: 150px;
+}
+
+.slick-arrow {
+  position: absolute;
+  z-index: 10;
+  top: 40%;
+  width: 60px;
+  height: 60px;
+  font-size: 0;
+  background: url(../images/best/arrow.svg) no-repeat center center;
+  cursor: pointer;
+}
+
+.slick-prev {
+  left: 0px;
+}
+
+.slick-next {
+  right: 0;
+  transform: rotate(180deg);
+}
+
+/*divide*/
+.divide {
+  padding: 50px 0 100px;
+}
+
+.divide>div {
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.divide h3 {
+  padding: 30px 0;
+}
+
+.divide1 {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.09);
+}
+
+.divide1>div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+}
+
+.divide1_1 {
+  background: url(../images/divide/window-5850628_640.png) no-repeat;
+  background-size: 300px;
+}
+
+.divide1_2 {
+  background: url(../images/divide/andrew-seaman-4Fi_4Q6_eFM-unsplash.jpg) no-repeat;
+  background-size: 300px;
+}
+
+.divide1_3 {
+  background: url(../images/divide/overthink-7185863_640.png) no-repeat;
+  background-size: 300px;
+}
+
+.divide1>p {
+  padding: 170px 0 0 20px;
+}
+
+/*talk*/
+.talk {
+  background-color: rgb(234, 235, 243);
+}
+
+.talk h2+p {
+  padding-bottom: 20px;
+}
+
+.talk ul {
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.talk li {
+  position: relative;
+  width: 200px;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.talk li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.talk li span {
+  position: absolute;
+  left: 10%;
+  top: 70%;
+  font-size: 14px;
+}
+
+/*news*/
+.news {
+  padding: 100px 50px;
+  background-color: rgb(246, 247, 251);
+  word-break: keep-all;
+  line-height: 18px;
+}
+
+.news h2 {
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.news ul {
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.news li {
+  width: 220px;
+  height: 220px;
+}
+
+.news li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.news1 {
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 40px;
+}
+
+.news1>div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+}
+
+.news .news1_1 {
+  background: url(../images/news/cell-phone-6855646_640.jpg) no-repeat;
+  background-size: 220px;
+}
+
+.news .news1_2 {
+  background: url(../images/news/kateryna-hliznitsova-Nqj2XWHy4K0-unsplash.jpg) no-repeat 50% 50%;
+  background-size: 220px;
+}
+
+.news .news1_3 {
+  background: url(../images/news/jon-tyson-YtYNavix3pw-unsplash.jpg) no-repeat 30% 0%;
+  background-size: 250px;
+}
+
+.news .news1_4 {
+  background: url(../images/news/andre-hunter-vm2cwMEiUFA-unsplash.jpg) no-repeat 40% 20%;
+  background-size: 240px;
+}
+
+.news .news1 p {
+  position: absolute;
+  left: 10%;
+  top: 60%;
+}
+
+.news .news1 span {
+  position: absolute;
+  font-size: 14px;
+  left: 10%;
+  top: 80%;
+}
+
+/*footer*/
+footer {
+  height: 100px;
+  color: #fff;
+  background-color: rgb(88, 89, 101);
+  line-height: 50px;
+}
+
+footer p img {
+  padding-top: 18px;
+}
+
+.f_right {
+  margin-left: 40px;
+}
+
+.f_right li {
+  padding-right: 20px;
+}

@@ -1,0 +1,100 @@
+body {
+  background-color: pink;
+}
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.grid-item {
+  width: calc((100% - 30px) / 2);
+  height: 200px;
+}
+main{
+  position: relative;
+}
+/*header*/
+.gnb>a{
+  display: block;
+  width: 30px;
+}
+.gnb button{
+  display: block;
+}
+.gnb>nav{
+  position: absolute;
+  z-index: 2;
+  display: none;
+  left: 0;
+  top: 150px;
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+  background-color: aliceblue;
+}
+.gnb>nav.on{
+  display: flex;
+  justify-content: space-between;
+  background-color: #5b9dd3;
+}
+.gnb>nav>ul{
+  display: block;
+  width: 90%;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 60px;
+}
+nav>ul>li>a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.gnb>nav>button{
+  margin-top: 10px;
+  height: 30px;
+}
+
+/*best*/
+.best {
+  height: auto;
+  display: block;
+  padding: 50px 50px 100px ;
+}
+.b_text {
+  width: 100%;
+}
+.b_list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+.b_list .b_list1 {
+  width: 100%;
+  height: 100px;
+}
+
+/*divide*/
+
+
+/*talk*/
+.talk_list li{
+  margin: 0 10px;
+}
+/*news*/
+.news_list li{
+  margin: 0 10px;
+}
+
+/*footer*/
+footer{
+  height: auto;
+}
+footer>div{
+  flex-direction: column;
+}
+.f_right{
+  margin: 20px 0 0 0 ;
+}
+.f_right>ul{
+  flex-direction: column;
+}
