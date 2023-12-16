@@ -1,5 +1,11 @@
+/** @format */
+
+html {
+  font-size: 10px;
+}
 body {
-  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1.6rem;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .inner {
@@ -12,10 +18,10 @@ h2 {
   font-size: 25px;
   font-weight: 500;
 }
-h2+p {
+h2 + p {
   padding: 20px 0;
-font-size: 20px;
-font-weight: 300;
+  font-size: 20px;
+  font-weight: 300;
 }
 
 button {
@@ -39,7 +45,7 @@ button {
   height: 40px;
 }
 
-.gnb>a {
+.gnb > a {
   display: none;
 }
 
@@ -51,17 +57,17 @@ nav li {
   display: none;
 }
 
-.gnb>p>a img {
+.gnb > p > a img {
   width: 40px;
 }
 
 /*main*/
 /*choice*/
-.choice > div{
+.choice > div {
   padding: 10px 0 80px;
 }
 
-.choice h2{
+.choice h2 {
   padding: 30px 0;
 }
 
@@ -77,11 +83,11 @@ nav li {
   height: auto;
 }
 
-.grid-container .number1{
+.grid-container .number1 {
   grid-row: 1 / span 2;
 }
 
-.grid-container .number7{
+.grid-container .number7 {
   grid-column: 4/ 5;
   grid-row: 2 / span 2;
 }
@@ -107,14 +113,16 @@ nav li {
 
 .front {
   z-index: 2;
-  background-color: rgba(90,153,207,0.8);
+  font-size: 1.8rem;
+  background-color: rgb(243, 249, 255);
   background-repeat: no-repeat;
   background-position: 80% 80%;
   background-size: 100px;
 }
 
 .back {
-  background-color: rgba(255,192,201,0.5);
+  padding: 12%;
+  background-color: rgb(243, 249, 255);
   transform: rotateY(180deg);
 }
 
@@ -125,34 +133,42 @@ nav li {
 .grid-item:hover .back {
   transform: rotateY(0deg);
 }
-
+.item1,
+.item2,
+.item7,
+.item10 {
+  color: #fff;
+  font-weight: 500;
+}
 .item1 {
-  background-image: url(../images/choice/free-icon-bipolar-9999778.png)  ;
+  background-color: #5387db;
+  background-image: url(../images/choice/free-icon-clinic-history-2622355.png);
 }
 
 .item2 {
-  background-image: url(../images/choice/free-icon-pathways-9601947.png);
+  background-color: #857cd9;
+  background-image: url(../images/choice/free-icon-pathways-9602176.png);
 }
 
 .item3 {
-  background-image: url(../images/choice/free-icon-rorschach-test-7198702.png);
-
+  background-image: url(../images/choice/free-icon-rorschach-test-7198686.png);
 }
 
 .item4 {
-  background-image: url(../images/choice/free-icon-job-transition-70005.png);
+  background-image: url(../images/choice/free-icon-career-path-6770626.png);
 }
 
 .item5 {
-  background-image: url(../images/choice/free-icon-depression-3764781.png);
+  background-image: url(../images/choice/free-icon-sadness-9132319.png);
 }
 
 .item6 {
-  background-image: url(../images/choice/free-icon-communication-6106749.png) ;
+  background-image: url(../images/choice/free-icon-family-3885015.png);
 }
 
 .item7 {
-  background-image: url(../images/choice/free-icon-game-console-2949874.png);
+  background-color: #f0cf48;
+  background-image: url(../images/choice/free-icon-game-controller-2331852.png);
 }
 
 .item8 {
@@ -164,14 +180,15 @@ nav li {
 }
 
 .item10 {
-  background-image: url(../images/choice/free-icon-stress-6819628.png);
+  background-color: #ff5d41;
+  background-image: url(../images/choice//free-icon-pain-3431810.png);
 }
 
 /*best*/
 .best {
   align-items: center;
   height: 600px;
-  background-color: #f4f5fd;
+  background-color: rgb(243, 249, 255);
 }
 
 .b_text {
@@ -179,14 +196,15 @@ nav li {
   padding: 30px;
 }
 
-.b_text > a{
+.b_text > a {
   display: block;
   width: 90px;
   height: 34px;
-  color: #555;
+  color: #fff;
+  font-weight: 500;
   text-align: center;
   line-height: 34px;
-  background-color: lightblue;
+  background-color: #5387db;
   border-radius: 5px;
 }
 
@@ -197,14 +215,21 @@ nav li {
 .b_list .b_list1 {
   width: 230px;
   height: 300px;
+  padding: 30px;
   margin-right: 20px;
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 0 0 15px -13px #333;
-  text-align: center;
-  line-height: 150px;
 }
-
+.b_list .b_list1 dt {
+  padding: 30px 0 40px;
+  font-size: 2rem;
+  text-align: center;
+}
+.b_list .b_list1 dd {
+  text-align: justify;
+  line-height: 1.7;
+}
 .slick-arrow {
   position: absolute;
   z-index: 10;
@@ -224,7 +249,36 @@ nav li {
   right: 0;
   transform: rotate(180deg);
 }
+.slick-arrow {
+  z-index: 50;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  font-family: xeicon;
+  font-size: 0;
+}
 
+.slick-arrow:before {
+  font-size: 50px;
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-prev:before {
+  content: "\e93b";
+}
+
+.slick-next {
+  right: 10px;
+}
+
+.slick-next:before {
+  content: "\e93e";
+}
 /*divide*/
 /* .divide {
   padding: 50px 0 100px;
@@ -281,7 +335,7 @@ nav li {
   padding: 150px 0;
 }
 
-.talk h2+p {
+.talk h2 + p {
   padding-bottom: 30px;
 }
 
@@ -299,7 +353,6 @@ nav li {
   box-shadow: 1px 1px 15px -10px #333;
 }
 
-
 .talk li a {
   display: block;
   width: 100%;
@@ -308,7 +361,7 @@ nav li {
   font-weight: 300;
 }
 
-.talk li p{
+.talk li p {
   font-size: 18px;
   font-weight: 300;
 }
@@ -360,7 +413,7 @@ nav li {
   border-radius: 40px;
 }
 
-.news1>div {
+.news1 > div {
   position: absolute;
   top: 0;
   left: 0;
@@ -374,17 +427,20 @@ nav li {
 }
 
 .news .news1_2 {
-  background: url(../images/news/kateryna-hliznitsova-Nqj2XWHy4K0-unsplash.jpg) no-repeat 50% 50%;
+  background: url(../images/news/kateryna-hliznitsova-Nqj2XWHy4K0-unsplash.jpg)
+    no-repeat 50% 50%;
   background-size: 220px;
 }
 
 .news .news1_3 {
-  background: url(../images/news/jon-tyson-YtYNavix3pw-unsplash.jpg) no-repeat 30% 0%;
+  background: url(../images/news/jon-tyson-YtYNavix3pw-unsplash.jpg) no-repeat
+    30% 0%;
   background-size: 250px;
 }
 
 .news .news1_4 {
-  background: url(../images/news/andre-hunter-vm2cwMEiUFA-unsplash.jpg) no-repeat 40% 20%;
+  background: url(../images/news/andre-hunter-vm2cwMEiUFA-unsplash.jpg)
+    no-repeat 40% 20%;
   background-size: 240px;
 }
 
