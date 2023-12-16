@@ -12,7 +12,6 @@ $(function () {
   let Width = 768;
   let screenWidth = $(window).width();
   if (screenWidth < Width) {
-    $(".talk_list").slick();
     $(".news_list").slick({
       slidesToShow: 2,
       slidesToScroll: 1,
@@ -21,7 +20,7 @@ $(function () {
 $('.b_list').slick({
     infinite: true,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     responsive: [
       {
         breakpoint: 1400,
@@ -36,7 +35,20 @@ $('.b_list').slick({
         },
       },
     ],
-  });
+});
+    $('.talk_list').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 2,
+      responsive: [
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+      ],
+    });
   };
 });
 

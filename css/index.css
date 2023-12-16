@@ -141,12 +141,12 @@ nav li {
   font-weight: 500;
 }
 .item1 {
-  background-color: #5387db;
+  background-color: #4ca6d0;
   background-image: url(../images/choice/free-icon-clinic-history-2622355.png);
 }
 
 .item2 {
-  background-color: #857cd9;
+  background-color: #54b886;
   background-image: url(../images/choice/free-icon-pathways-9602176.png);
 }
 
@@ -167,7 +167,7 @@ nav li {
 }
 
 .item7 {
-  background-color: #f0cf48;
+  background-color: #008ba3;
   background-image: url(../images/choice/free-icon-game-controller-2331852.png);
 }
 
@@ -180,7 +180,7 @@ nav li {
 }
 
 .item10 {
-  background-color: #ff5d41;
+  background-color: #6fb7ae;
   background-image: url(../images/choice//free-icon-pain-3431810.png);
 }
 
@@ -193,7 +193,7 @@ nav li {
 
 .b_text {
   width: 30%;
-  padding: 30px;
+  padding: 0 50px;
 }
 
 .b_text > a {
@@ -212,171 +212,109 @@ nav li {
   width: 70%;
 }
 
-.b_list .b_list1 {
+.b_list li {
+  position: relative;
+  z-index: 1;
   width: 230px;
   height: 300px;
   padding: 30px;
   margin-right: 20px;
-  background-color: #fff;
+  color: #fff;
   border-radius: 20px;
   box-shadow: 0 0 15px -13px #333;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 180%;
 }
-.b_list .b_list1 dt {
+.best .b_list li::before {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: rgba(136, 136, 136, 0.5);
+}
+.b_list .b_list1 {
+  background-image: url(../images/best/mika-baumeister-NSI6XtbabNw-unsplash.jpg);
+}
+.b_list .b_list2 {
+  background-image: url(../images/best/amy-gatenby-Of96tWnjoOA-unsplash.jpg);
+  background-size: 100%;
+}
+.b_list .b_list3 {
+  background-image: url(../images/best/kiana-bosman-wSSTkMDMvZo-unsplash.jpg);
+  background-size: 100%;
+}
+.b_list .b_list4 {
+  background-image: url(../images/best/steve-johnson-wpw8sHoBtSY-unsplash.jpg);
+}
+.b_list .b_list5 {
+  background-image: url(../images/best/smartphone-4540273_640.jpg);
+  background-size: 105%;
+}
+.b_list .b_list6 {
+  background-image: url(../images/best/outside-2713688_640.jpg);
+}
+.b_list .b_list7 {
+  background-image: url(../images/best/happy-1281590_640.jpg);
+}
+.b_list li dt {
   padding: 30px 0 40px;
   font-size: 2rem;
   text-align: center;
 }
-.b_list .b_list1 dd {
+.b_list li dd {
   text-align: justify;
   line-height: 1.7;
 }
 .slick-arrow {
-  position: absolute;
-  z-index: 10;
-  top: 40%;
-  width: 60px;
-  height: 60px;
-  font-size: 0;
-  background: url(../images/best/arrow.svg) no-repeat center center;
-  cursor: pointer;
-}
-
-.slick-prev {
-  left: 0px;
-}
-
-.slick-next {
-  right: 0;
-  transform: rotate(180deg);
-}
-.slick-arrow {
-  z-index: 50;
+  z-index: 2;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
+  color: #5387db;
   font-family: xeicon;
   font-size: 0;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 3px #999;
+  cursor: pointer;
 }
 
 .slick-arrow:before {
-  font-size: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
 }
 
 .slick-prev {
-  left: 10px;
+  left: -20px;
 }
 
 .slick-prev:before {
-  content: "\e93b";
+  content: '\e93c';
 }
 
 .slick-next {
-  right: 10px;
+  right: 0px;
 }
 
 .slick-next:before {
-  content: "\e93e";
-}
-/*divide*/
-/* .divide {
-  padding: 50px 0 100px;
-}
-
-.divide>div {
-  justify-content: space-between;
-  align-items: center;
-  gap: 50px;
-}
-
-.divide h3 {
-  padding: 30px 0;
-}
-
-.divide1 {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
-  border-radius: 28px;
-  box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.09);
-}
-
-.divide1>div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 200px;
-}
-
-.divide1_1 {
-  background: url(../images/divide/window-5850628_640.png) no-repeat;
-  background-size: 300px;
-}
-
-.divide1_2 {
-  background: url(../images/divide/andrew-seaman-4Fi_4Q6_eFM-unsplash.jpg) no-repeat;
-  background-size: 300px;
-}
-
-.divide1_3 {
-  background: url(../images/divide/overthink-7185863_640.png) no-repeat;
-  background-size: 300px;
-}
-
-.divide1>p {
-  padding: 210px 0 0 20px;
-} */
-
-/*talk*/
-.talk {
-  padding: 150px 0;
-}
-
-.talk h2 + p {
-  padding-bottom: 30px;
-}
-
-.talk ul {
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.talk li {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 1px 1px 15px -10px #333;
-}
-
-.talk li a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 25px;
-  font-weight: 300;
-}
-
-.talk li p {
-  font-size: 18px;
-  font-weight: 300;
-}
-
-.talk li span {
-  position: absolute;
-  left: 25px;
-  top: 70%;
-  font-size: 14px;
+  content: '\e93f';
 }
 
 /*news*/
 .news {
-  padding: 100px 0;
-  background-color: rgb(246, 247, 251);
+  padding: 100px 0 150px;
+  background-color: #fafafa;
   word-break: keep-all;
   line-height: 18px;
 }
@@ -393,8 +331,8 @@ nav li {
 }
 
 .news li {
-  width: 220px;
-  height: 220px;
+  width: 100%;
+  height: 100%;
 }
 
 .news li a {
@@ -404,57 +342,112 @@ nav li {
 }
 
 .news1 {
-  position: relative;
-  padding: 20px;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  background-color: #fff;
-  border-radius: 40px;
 }
 
 .news1 > div {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 120px;
+  height: 150px;
+  border-radius: 5px;
 }
 
 .news .news1_1 {
   background: url(../images/news/cell-phone-6855646_640.jpg) no-repeat;
-  background-size: 220px;
+  background-size: 100%;
 }
 
 .news .news1_2 {
   background: url(../images/news/kateryna-hliznitsova-Nqj2XWHy4K0-unsplash.jpg)
     no-repeat 50% 50%;
-  background-size: 220px;
+  background-size: 100%;
 }
 
 .news .news1_3 {
   background: url(../images/news/jon-tyson-YtYNavix3pw-unsplash.jpg) no-repeat
     30% 0%;
-  background-size: 250px;
+  background-size: 120%;
 }
 
 .news .news1_4 {
   background: url(../images/news/andre-hunter-vm2cwMEiUFA-unsplash.jpg)
     no-repeat 40% 20%;
-  background-size: 240px;
+  background-size: 120%;
 }
 
 .news .news1 p {
-  position: absolute;
-  left: 10%;
-  top: 60%;
+  padding: 30px 0 15px;
+  font-size: 2rem;
+  line-height: 1.3;
 }
 
 .news .news1 span {
-  position: absolute;
-  font-size: 14px;
-  left: 10%;
-  top: 80%;
+  font-size: 1.6rem;
+}
+
+
+/*talk*/
+.talk {
+  padding: 150px 0;
+    background-color: rgb(246, 247, 251);
+
+}
+
+.talk h2 + p {
+  padding-bottom: 30px;
+}
+
+.talk ul {
+  justify-content: space-between;
+}
+
+.talk li {
+  position: relative;
+  margin: 0 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 1px 1px 15px -10px #333;
+}
+
+.talk li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+}
+
+.talk li p:first-child {
+  padding: 10px 0 15px;
+  color: #035d5a;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+.talk li p:nth-child(2) {
+  padding-bottom: 20px;
+  text-align: right;
+}
+.talk li p:nth-child(3) {
+  color: #999;
+  line-height: 1.8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+.talk li p:nth-child(4) {
+  margin: 20px 5px 10px;
+  font-size: 2.5rem;
+  letter-spacing: 10px;
+}
+.talk .slick-arrow {
+  color: green;
+}
+.talk .slick-prev {
+  left: -3%;
+}
+.talk .slick-next {
+  right: -3%;
 }
 
 /*footer*/
