@@ -1,54 +1,48 @@
+/** @format */
+
 $(function () {
-  $(".gnb>button").click(function (e) {
+  $('.gnb>button').click(function (e) {
     e.preventDefault();
-    $(".gnb>nav").toggleClass("on")
+    $('.gnb>nav').toggleClass('on');
   });
-   $("nav>button").click(function (e) {
-     e.preventDefault();
-     $(".gnb>nav").removeClass("on");
+  $('nav>button').click(function (e) {
+    e.preventDefault();
+    $('.gnb>nav').removeClass('on');
   });
 
-//slide
-  let Width = 768;
+  //slide
+  let Width = 800;
   let screenWidth = $(window).width();
   if (screenWidth < Width) {
-    $(".news_list").slick({
+    $('.talk_list').slick();
+    $('.news_list').slick({
       slidesToShow: 2,
       slidesToScroll: 1,
     });
-  } else { 
-$('.b_list').slick({
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 2,
-    responsive: [
-      {
-        breakpoint: 1400,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 1000,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-    ],
-});
-    $('.talk_list').slick({
+  } else {
+    $('.b_list').slick({
       infinite: true,
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 2,
       responsive: [
         {
-          breakpoint: 800,
+          breakpoint: 1400,
           settings: {
-            slidesToShow: 1,
+            slidesToShow: 3,
+          },
+        },
+        {
+          breakpoint: 1000,
+          settings: {
+            slidesToShow: 2,
           },
         },
       ],
     });
-  };
+    $('.talk_list').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 2,
+    });
+  }
 });
-
