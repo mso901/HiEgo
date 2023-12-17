@@ -13,6 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="script/index.js"></script>
+  <script src="script/slide.js"></script>
 </head>
 
 <body>
@@ -27,16 +28,40 @@
       </div><!--//h_top-->
       <div class="gnb flex">
         <button><img src="images/header/free-icon-menu-3856832.png" alt=""></button>
-        <nav>
-          <ul class="flex">
-            <li><a href="#">심리검사</a></li>
-            <li><a href="#">심리상담</a></li>
-            <li><a href="#">커뮤니티</a></li>
-            <li><a href="#">공지사항</a></li>
+        <nav class="on">
+          <ul class="mainmenu flex">
+            <li><a href="#">심리검사</a>
+              <ul class="submenu">
+                <li><a href="#">성격/적응</a></li>
+                <li><a href="#">대인관계/가족</a></li>
+                <li><a href="#">진로/학습</a></li>
+                <li><a href="#">중독/건강</a></li>
+              </ul>
+            </li>
+            <li><a href="#">심리상담</a>
+              <ul class="submenu">
+                <li><a href="#">상담 톡하기</a></li>
+                <li><a href="#">상담사 찾기</a></li>
+                <li><a href="#">상담센터 찾기</a></li>
+              </ul>
+            </li>
+            <li><a href="#">커뮤니티</a>
+              <ul class="submenu">
+                <li><a href="#">고민나누기</a></li>
+                <li><a href="#">검사후기</a></li>
+                <li><a href="#">상담후기</a></li>
+              </ul>
+            </li>
+            <li><a href="#">공지사항</a>
+              <ul class="submenu">
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">Q&A(문의사항)</a></li>
+                <li><a href="#">FAQ(자주하는 질문)</a></li>
+              </ul>
+            </li>
           </ul>
-          <button><img src="images/header/free-icon-close-151882.png" alt=""></button>
         </nav>
-        <p><a href=""><img src="images/header/free-icon-search-11462299.png" alt="검색"></a></p>
+        <p class="find"><a href=""><img src="images/header/free-icon-search-11462299.png" alt="검색"></a></p>
       </div><!--//gnb-->
     </div><!--//inner-->
   </header>

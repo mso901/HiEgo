@@ -15,52 +15,61 @@ main {
 }
 
 /*header*/
-.gnb > a {
-  display: block;
-  width: 30px;
-}
-
 .gnb button {
   display: block;
 }
 
-.gnb > nav {
+nav {
   position: absolute;
   z-index: 2;
   display: none;
   left: 0;
   top: 150px;
-  padding: 30px;
   width: 100%;
   height: 100%;
   background-color: aliceblue;
 }
 
 .gnb > nav.on {
-  display: flex;
-  justify-content: space-between;
-  background-color: #5b9dd3;
-}
-
-.gnb > nav > ul {
   display: block;
-  width: 90%;
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 60px;
+  background-color: #4a82af;
 }
 
-nav > ul > li > a {
+nav .mainmenu {
   display: block;
   width: 100%;
+  text-indent: 20px;
+  line-height: 60px;
+}
+nav .mainmenu > li {
+  padding: 0;
+  width: 100%;
+}
+nav .mainmenu > li:last-child {
+  width: 100%;
+}
+nav .mainmenu li:hover > a {
+  display: block;
+  border-radius: 0;
+  color: #000;
+  background-color: #fff;
+}
+nav .mainmenu > li > a {
+  display: block;
+  padding: 20px;
+  width: 100%;
   height: 100%;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
 }
-
-.gnb > nav > button {
-  margin-top: 10px;
-  height: 30px;
+nav .submenu {
+  position: static;
+  height: auto;
 }
-
+nav .submenu a{
+  padding-left: 20px;
+}
 /*best*/
 .best {
   height: auto;
