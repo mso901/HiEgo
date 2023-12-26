@@ -48,12 +48,7 @@ nav .mainmenu > li {
 nav .mainmenu > li:last-child {
   width: 100%;
 }
-nav .mainmenu li:hover > a {
-  display: block;
-  border-radius: 0;
-  color: #000;
-  background-color: #fff;
-}
+
 nav .mainmenu > li > a {
   display: block;
   padding: 20px;
@@ -62,6 +57,13 @@ nav .mainmenu > li > a {
   color: #fff;
   font-size: 22px;
   font-weight: 500;
+}
+nav .mainmenu li:hover > a {
+  display: block;
+  padding-left: 20px;
+  border-radius: 0;
+  color: #000;
+  background-color: #fff;
 }
 nav .submenu {
   position: static;
