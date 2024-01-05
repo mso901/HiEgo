@@ -5,7 +5,7 @@ $(function () {
   let Width = 800;
   $("nav>ul>li").on({
     "mouseenter keyup": function () {
-        let screenWidth = $(window).width();
+      let screenWidth = $(window).width();
       if (screenWidth < Width) {
         $(this).find(".submenu").stop().slideDown();
       } else {
@@ -13,7 +13,7 @@ $(function () {
       }
     },
     "mouseleave keydown": function () {
-        let screenWidth = $(window).width();
+      let screenWidth = $(window).width();
       if (screenWidth < Width) {
         $(this).find(".submenu").stop().slideUp();
       } else {
@@ -22,7 +22,6 @@ $(function () {
     },
   });
 
-  
   //햄버거 메뉴 클릭
   $(".gnb>button").click(function (e) {
     e.preventDefault();
