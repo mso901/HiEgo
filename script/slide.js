@@ -1,7 +1,8 @@
 $(function () {
   //slide
   let Width = 800;
-  $(window).resize(function () {
+
+  function applySwiper() {
     let screenWidth = $(window).width();
     if (screenWidth < Width) {
       $(".talk_list").slick();
@@ -34,6 +35,13 @@ $(function () {
         slidesToShow: 3,
         slidesToScroll: 2,
       });
-    }
-  }).resize();
+    } //else
+  } //function
+
+  applySwiper();
+
+  $(window).resize(function () {
+    applySwiper();
+  }); //slide
+
 });
