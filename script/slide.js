@@ -5,7 +5,11 @@ $(function () {
   function applySwiper() {
     let screenWidth = $(window).width();
     if (screenWidth < Width) {
-      $(".talk_list").slick();
+       $(".talk_list").slick({
+         infinite: true,
+         slidesToShow: 1,
+         slidesToScroll: 1,
+       });
       $(".news_list").slick({
         slidesToShow: 2,
         slidesToScroll: 1,
