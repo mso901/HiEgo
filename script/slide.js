@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
   //slide
   let Width = 800;
   $(window).resize(function () {
@@ -35,5 +35,5 @@ $(function(){
         slidesToScroll: 2,
       });
     }
-  }); //slide
+  }).resize();
 });
