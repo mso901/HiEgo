@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>성남시 : 회원정보 : 회원가입</title>
+
+  <!-- <script src="/include/cmm_new/js/health_new.js"></script> -->
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta name="description" content="성남시 중원구 여수동 위치, 성남시청, 행정정보, 생활문화, 산업경제 정보 수록."> -->
+  <meta name="generator" content="jnet co. ltd.">
+  <meta id="metaTitle" property="og:title" content="성남시청">
+  <meta id="metaDescription" property="og:description" content="회원정보 > 회원가입">
+  <meta id="metaType" property="og:type" content="website">
+  <meta id="metaImage" property="og:image"
+    content="https://www.seongnam.go.kr/include/cmm_new/image/common/sns_noimg.gif">
+  <meta id="metaUrl" property="og:url"
+    content="https://www.seongnam.go.kr/member/joinWrite.do?sEncodeData=AgAFRzU5OTETw19eQI8vXr48fJf3LhVUcXLEpOAZuAKgikAn7EwiTFu886gtY9xBuhXvDSy+6slwMgSDUywGGcnoWZw6zLyhOVIckTQ8W6ao2oaaxsGNcezKj8/N+H6OzDWM0NYAadlWly3mJYzJaewtyikITVcHKudWqyyi4Z5jDfluna2WnbpGLOs3LgtW5+xVB3rx+waT6LV14O+wwHCUzySWz5axTd5HfIU46MIxL2jFH7Ze8NdgZnq6TFUWBsIaycTj/8vScz7VEQ1SpKkKPAQjvAz+e22Mf0SEukki28HC0niug/xmVgXkHu/gY5xi0ujzqbcCrejTUEl9K81LSISWT+a4N3gh2vuHNknQvO+F4GaI4/BFlq11qHWw6ywwlyXpAKqISw+DG6SSZoqun9YIe3s4k9tMdhVazlM0VsdxNjSqfOKwZh0o2SHSifywXq22MjizRfEUPIhvH6lIJfc8matS+3vJwaveinGplp+ulHx5X3wfd2/FtwmcVnUPlcvl1Yn7uQ+iR+q51BVu//ums431xTcoA9Rkc8BHlL50n4laHUjVNSa0Y37/AwSDGP/uQC9V83L//RrsLm+uV5+xNeRa2NSUiUe5+VpoBL82svNDn3Z0qlpW/QXFPfPGwUgH+isLVSAc8ciQi/BD8bRJUZdNid7jxmQ+aKy5aohfGK0j7A==&menuIdx=1000438&certType=CHECKPLUS&">
+  <link rel="shortcut icon" href="/include/cmm_new/image/common/ico_sns_favicon.png">
+  <script src="/include/cmm_new/js/jquery-1.12.4.min.js"></script>
+  <script src="/include/cmm_new/js/jquery.slider.js"></script>
+  <script src="/include/cmm_new/js/jquery.tab.js"></script>
+  <script src="/include/cmm_new/js/jquery.gallery.2.0.js"></script>
+  <script src="/include/cmm_new/js/makePCookie.js"></script>
+  <script src="/include/cmm/js/jquery.alphanum.js"></script>
+  <script src="/include/cmm/js/common.js"></script>
+  <script src="/include/cmm_new/js/default.js?v=20220801"></script>
+
+
+  <!-- 모니터링 -->
+  <script type='text/javascript'>
+    var _bwa = [];
+    _bwa.push(['setCollectorUrl', 'https://www.zesinc.co.kr/api/collector/seongnam']);
+    _bwa.push(['setCustomerId', 'seongnam']);
+    var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+    g.type = 'text/javascript';
+    g.src = '/include/monitor/blueworksWebAgent-2_1-min.js';
+    g.async = g.defer = true;
+    s.parentNode.insertBefore(g, s);
+  </script>
+
+
+
+
+  <link href="/include/cmm/css/sub.css" rel="stylesheet" type="text/css">
+  <script src="/include/cmm/js/gnb.js"></script>
+  <style>
+    body,
+    #wrap {
+      background: none;
+    }
+  </style>
+  <script>
+    $(function () {
+      $("select#contact1").html($("select#mobile1").html());
+
+      $("input:radio[name='cchktype']").on("change", function () {
+        var type = $(this).val();
+        var contact1 = $("select#" + type + "1").html();
+        $("select#contact1").html(contact1);
+      });
+
+      $(".numeric").numeric();
+      $(".numeric").css("ime-mode", "disabled");
+      $(".engOnly").css("ime-mode", "disabled");
+
+      $("#jusoBtn").click(function () {
+        jusoPop();
+      });
+      $("#postcode").click(function () {
+        jusoPop();
+      });
+      $("#address").click(function () {
+        jusoPop();
+      });
+      /*$("#address").click(function(){
+        if(!$("#address").val()){
+          alert("주소검색버튼을 클릭하여 주소를 입력하세요");
+          $("#jusoBtn").focus();
+          return false;
+        } else {
+          $("#address").attr("readonly","");
+          return false;
+        }
+      });*/
+
+      $("#member_id").keydown(function (e) {
+        $("#idCheck").val("N");
+      });
+
+      $("#idCheckBtn").click(function () {
+        if (!$("#member_id").val()) {
+          alert("아이디를 입력하세요");
+          $("#member_id").focus();
+          return false;
+        }
+        var memberId = $("#member_id").val();
+        $.ajax({
+          type: "POST",
+          url: "/member/memberIdCheck.do",
+          dataType: "json",
+          data: { "member_id": memberId },
+          success: function (data) {
+            if (data.success) {
+              alert("사용가능한 아이디입니다.");
+              $("#idCheck").val("Y");
+              $("#pwd").focus();
+            } else {
+              alert("탈퇴했거나 다른 회원이 사용중인 아이디입니다. 새로운 아이디를 입력하세요.");
+              $("#member_id").val("");
+              $("#member_id").focus();
+            }
+          },
+          error: function (request, status, error) {
+            alert("에러코드: " + request.status + "\r\n메시지: " + request.responseText);
+          }
+        });
+      });
+
+      /* 20230724 start */
+      $("#email_domain").focus(function () {
+        if ($("#domainSelect").val() == "" || $("#domainSelect").val() != "etc") {
+          // $(this).blur();
+        }
+      });
+      /* 20230724 end */
+
+      $("#domainSelect").change(function () {
+        if ($(this).val() == "etc") {
+          $("#email_domain").val("");
+          $("#email_domain").removeAttr("readonly");
+          $("#email_domain").removeClass("readOnlyClass");
+          $("#email_domain").focus();
+        } else {
+          $("#email_domain").val($(this).val());
+          $("#email_domain").attr("readonly", true);
+          $("#email_domain").addClass("readOnlyClass");
+        }
+      });
+
+      $("#saveBtn").click(function () {
+        if (!$("#member_id").val()) {
+          alert("아이디를 입력하세요");
+          $("#member_id").focus();
+          return false;
+        }
+        var newId = $("#member_id").val();
+        var regExpId = /^[a-zA-Z0-9_-]{4,12}$/g;
+        var blank = /[\s]/g;
+        if (blank.test(newId)) {
+          $("#member_id").val($.trim(newId));
+        }
+        if (!regExpId.test(newId)) {
+          alert("아이디 형식이 올바르지 않습니다\n(영문,숫자 4~12자리 이내)");
+          $("#member_id").focus();
+          return false;
+        }
+
+        if ($("#idCheck").val() != "Y") {
+          alert("아이디 중복체크를 하세요");
+          $("#idCheck").focus();
+          return false;
+        }
+
+        /* if(!$("#pwd").val()){
+          alert("비밀번호를 입력하세요");
+          $("#pwd").focus();
+          return false;
+        }
+    
+          var inputPwd = $("#pwd").val();
+          var regExpPwd1 = /^.*(?=.{10,20}$)(?=.*\d)(?=.*[a-zA-Z]).*$/;
+          var regExpPwd2 = /^.*(?=.{10,20}$)(?=.*\d)(?=.*[!@#$%^&*()-_+=`~]).*$/;
+          var regExpPwd3 = /^.*(?=.{10,20}$)(?=.*[a-zA-Z])(?=.*[!@#$%^&*()-_+=`~]).*$/;
+    
+          if(!regExpPwd1.test(inputPwd) && !regExpPwd2.test(inputPwd) && !regExpPwd3.test(inputPwd)){
+          alert("비밀번호 형식이 올바르지 않습니다\n(영문,숫자,특수문자 중 2종류이상 조합하여 10~20자리 이내)");
+          $("#pwd").val("");
+          $("#repwd").val("");
+          $("#pwd").focus();
+          return false;
+        } */
+
+        var pw = $("#pwd").val();
+        var num = pw.search(/[0-9]/g);
+        var eng = pw.search(/[a-z]/ig);
+        var spe = pw.search(/[`~!@@#$%^&*|\\\'\";:\/?]/gi);
+
+        if (!pw) {
+          alert("비밀번호를 입력하세요");
+          $("#pwd").focus();
+          return false;
+        }
+
+        if (pw.length < 10 || pw.length > 20) {
+          alert("비밀번호를 10자리 ~ 20자리 이내로 입력해주세요.");
+          $("#pwd").val('');
+          $("#repwd").val("");
+          $("#pwd").focus();
+          return false;
+        }
+
+        if (pw.search(/\s/) != -1) {
+          alert("비밀번호는 공백없이 입력해주세요.");
+          $("#pwd").val('');
+          $("#repwd").val("");
+          $("#pwd").focus();
+          return false;
+        }
+
+        if ((num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0)) {
+          alert("비밀번호를 영문,숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.");
+          $("#pwd").val('');
+          $("#repwd").val("");
+          $("#pwd").focus();
+          return false;
+        }
+
+        if (!$("#repwd").val()) {
+          alert("비밀번호 확인을 입력하세요");
+          $("#repwd").focus();
+          return false;
+        }
+        if ($("#pwd").val() != $("#repwd").val()) {
+          alert("비밀번호와 비밀번호확인이 일치하지 않습니다");
+          $("#repwd").val("");
+          $("#pwd").focus();
+          return false;
+        }
+        var emailId = $("#email_id").val();
+        var emailDomain = $("#email_domain").val();
+        if (!emailId || !emailDomain) {
+          alert("이메일을 입력하세요");
+          $("#email_id").focus();
+          return false;
+        }
+        $("#email").val(emailId + "@" + emailDomain);
+        var regExpEmail = /[0-9a-zA-Z.;~!#$%<>^&*()-_+=~]/;
+
+        if (emailId.indexOf("@") > -1) {
+          alert("이메일 주소가 유효하지 않습니다");
+          $("#email_id").focus();
+          return false;
+        }
+
+        for (var i = 0; i < $("#email_id").val().length; i++) {
+          if ($("#email_id").val().charAt(i) != " " && regExpEmail.test($("#email_id").val().charAt(i)) == false) {
+            alert("이메일 주소가 유효하지 않습니다");
+            $("#email_id").focus();
+            return false;
+            break;
+          }
+        }
+
+        if (!$("#postcode").val()) {
+          alert("주소를 검색하여 입력하세요");
+          $("#jusoBtn").focus();
+          return false;
+        }
+
+        /*
+        var regExpPhone = /^\d{2,4}-\d{3,4}-\d{4}$/;
+        var phone1 = $("#phone1").val();
+        var phone2 = $("#phone2").val();
+        var phone3 = $("#phone3").val();
+        var phone = phone1+"-"+phone2+"-"+phone3;
+        if(phone2 || phone3){
+          if(!regExpPhone.test(phone)){
+            alert("전화번호 형식이 올바르지 않습니다");
+            $("#phone1").focus();
+            return false;
+          }
+        }
+        $("#phone").val(phone);
+    
+        var regExpMobile = /^\d{3}-\d{3,4}-\d{4}$/;
+        var mobile1 = $("#mobile1").val();
+        var mobile2 = $("#mobile2").val();
+        var mobile3 = $("#mobile3").val();
+        var mobile = mobile1+"-"+mobile2+"-"+mobile3;
+        if(mobile2 || mobile3){
+          if(!regExpMobile.test(mobile)){
+            alert("핸드폰번호 형식이 올바르지 않습니다");
+            $("#mobile1").focus();
+            return false;
+          }
+        }
+        $("#mobile").val(mobile);
+        */
+        var contactChk = false;
+        $("input:radio[name='cchktype']").each(function () {
+          var chkVal = $(this).is(":checked");
+          var chkType = $(this).val();
+          if (chkVal) {
+            if ($("#contact2").val().length > 0 && $("#contact3").val().length > 0) {
+              var regExpContect = /^\d{2,4}-\d{3,4}-\d{4}$/;
+              var contact1 = $("#contact1").val();
+              var contact2 = $("#contact2").val();
+              var contact3 = $("#contact3").val();
+              var contact = contact1 + "-" + contact2 + "-" + contact3;
+              if (contact2 || contact3) {
+                if (!regExpContect.test(contact)) {
+                  alert("전화번호 형식이 올바르지 않습니다");
+                  $("#contact1").focus();
+                } else {
+
+                  $("#mobile").val((chkType == "mobile" ? contact : ""));
+                  $("#phone").val((chkType == "phone" ? contact : ""));
+                  contactChk = true;
+                }
+              }
+            } else {
+              alert("연락처를 입력하여주십시요.");
+            }
+            return;
+          }
+        });
+
+        if (!contactChk) {
+          return false;
+        }
+
+        if (confirm("회원가입을 하시겠습니까?")) {
+          $("#writeForm").attr("action", "/member/joinProc.do").submit();
+          return true;
+        }
+        return false;
+
+      });
+    });
+
+    function jusoPop() {
+      var objwin = window.open("/popup/juso.do", "jusoPopup", "width=570,height=420, scrollbars=yes, resizable=yes");
+      objwin.focus();
+    }
+
+    function jusoCallBack(roadFullAddr, roadAddrPart1, addrDetail, roadAddrPart2, engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn) {
+      $("#postcode").val(zipNo);
+      $("#address").val(roadAddrPart1 + " " + addrDetail);
+    }
+  </script>
+  <script src="/pluginfree/jsp/nppfs.script-1.9.0.jsp"></script>
+  <script src="/pluginfree/js/nppfs-1.9.0.js"></script>
+  <script>
+    jQuery(document).ready(function () {
+      jQuery("#userAgent").text(navigator.userAgent);
+      var isSupport = npPfsCtrl.IsSupport();
+      var isMobile = npPfsDefine.isMobileDevice();
+      if (!isSupport && !isMobile) {
+        //alert("보안프로그램을 지원하지 않는 환경입니다. 접속 가능 환경을 확인하시고 다시 시도하십시오.");
+      } else {
+        //npPfsStartup(null, false, true, false, false, "npkencrypt", "on");	// 2020.04.06 삭제
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <!-- skip -->
+  <div class="accessibility">
+    <a href="#contentcore">본문 바로가기</a>
+    <a href="#lnb">하위메뉴 바로가기</a>
+  </div>
+  <!-- skip -->
+
+  <!-- wrap -->
+  <div id="wrap">
+    <div id="topheader">
+      <div id="indexColumn">
+
+        <header id="memberheader">
+          <div class="headerInner">
+            <div class="logo">
+              <a href="/">
+
+                <img src="/include/cmm_new/image/layout/member_logo.png" alt="성남시청로고" title="성남시청">
+
+              </a>
+            </div>
+            <div class="member_btn">
+              <div class="home">
+                <a href="/">성남시청 홈</a>
+              </div>
+
+            </div>
+          </div>
+        </header>
+      </div>
+    </div>
+    <!-- container -->
+    <div id="middle">
+      <div id="contbody" class="clearfix">
+        <div id="contentcore" class="member">
+          <div class="tap_wrap type1">
+            <ul>
+              <li><a href="/city/1000437/20018/program.do">로그인</a></li>
+              <li><a href="/city/1000438/20019/program.do" class="current">회원가입</a></li>
+              <li><a href="/city/1000441/20020/program.do">아이디찾기</a></li>
+              <li><a href="/city/1000442/20021/program.do">비밀번호찾기</a></li>
+            </ul>
+          </div>
+          <!-- tab mo.ver -->
+          <div class="m_tab_wrap type1">
+            <div class="m_tab_box">
+              <a href="#none">회원가입</a>
+            </div>
+            <ul>
+              <li><a href="/city/1000437/20018/program.do">로그인</a></li>
+              <li class="current"><a href="/city/1000438/20019/program.do">회원가입</a></li>
+              <li><a href="/city/1000441/20020/program.do">아이디찾기</a></li>
+              <li><a href="/city/1000442/20021/program.do">비밀번호찾기</a></li>
+            </ul>
+          </div>
+          <!-- //tab mo.ver -->
+          <form name="writeForm" id="writeForm" method="post" action="/member/joinProc.do">
+            <div id="nppfs-loading-modal" style="display:none;"></div>
+            <div class="nppfs-elements" style="display:none;"></div>
+            <input type="hidden" name="gender" value="여자" />
+            <input type="hidden" name="virtualno" value="" />
+            <input type="hidden" name="conn_code"
+              value="FAHlu2mq/S/G1LGMIn3l150Fo8P9ceRJBwga4Qa+GBgg2XvDTdF0Pqfj6qhD8SD9Dpjvoa02xeO6jYnCisLEKQ==" />
+            <input type="hidden" name="hash_code"
+              value="MC0GCCqGSIb3DQIJAyEA3bT0crz7KXnrtks0lU0C274xv7asGQESUUvt8aORZKY=" />
+            <input type="hidden" name="idCheck" id="idCheck" value="N" />
+            <div class="member_wrap">
+              <p class="ta_r"><span class="essential">*</span> 필수입력</p>
+              <div class="boardWrap member_title_after">
+                <table class="board-view">
+                  <caption>회원가입 정보입력</caption>
+                  <colgroup>
+                    <col style="width:130px">
+                    <col>
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th scope="row">성명</th>
+                      <td>민선옥<input type="hidden" name="member_nm" value="민선옥" title="성명"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">생년월일</th>
+                      <td>
+                        1994년 10월 05일
+                        <input type="hidden" name="birthday" value="1994-10-05" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><label for="member_id">아이디 <span class="essential">*</span></label></th>
+                      <td>
+                        <div class="inpFullBtn form-ele auto">
+                          <input type="text" id="member_id" name="member_id" title="아이디 입력" maxlength="12"
+                            class="form-ele auto engOnly">
+                          <span class="btn input"><a href="#link" id="idCheckBtn">중복체크</a></span>
+                        </div>
+                        <p class="themeFC">영문,숫자 4~12자이내</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><label for="pwd">비밀번호 <span class="essential">*</span></label></th>
+                      <td>
+                        <input type="password" id="pwd" name="pwd" title="비밀번호 입력" maxlength="20"
+                          class="form-ele auto engOnly">
+                        <p class="themeFC">10~20자리 영문,숫자,특수문자 중 2종류 이상으로 조합</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><label for="repwd">비밀번호 확인 <span class="essential">*</span></label></th>
+                      <td>
+                        <input type="password" id="repwd" name="repwd" title="비밀번호 확인" maxlength="20"
+                          class="form-ele auto engOnly">
+                        <p class="themeFC">위의 비밀번호 다시한번 더 입력</p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row"><label for="postcode">주소 <span class="essential">*</span></label></th>
+                      <td>
+                        <input type="text" id="postcode" name="postcode" title="우편번호 찾기" readonly="readonly"
+                          class="form-ele short readonly" />
+                        <span class="btn input"><a href="#" id="jusoBtn" title="새창에서 열림">주소찾기</a></span>
+                        <input type="text" id="address" name="address" title="주소 입력" readonly="readonly"
+                          class="form-ele mt05" />
+                        <p class="themeFC">주소검색버튼을 클릭하여 주소를 입력하세요</p>
+                      </td>
+                    </tr>
+                    <tr style="display: none">
+                      <th scope="row"><label for="phone1">전화번호</label></th>
+                      <td>
+                        <select name="phone1" id="phone1" title="전화번호 앞자리" class="form-ele short">
+
+                          <option value="02">02</option>
+
+                          <option value="031" selected>031</option>
+
+                          <option value="032">032</option>
+
+                          <option value="033">033</option>
+
+                          <option value="041">041</option>
+
+                          <option value="042">042</option>
+
+                          <option value="043">043</option>
+
+                          <option value="051">051</option>
+
+                          <option value="052">052</option>
+
+                          <option value="053">053</option>
+
+                          <option value="054">054</option>
+
+                          <option value="055">055</option>
+
+                          <option value="061">061</option>
+
+                          <option value="062">062</option>
+
+                          <option value="063">063</option>
+
+                          <option value="064">064</option>
+
+                          <option value="070">070</option>
+
+                          <option value="080">080</option>
+
+                          <option value="0303">0303</option>
+
+                          <option value="0502">0502</option>
+
+                          <option value="0504">0504</option>
+
+                          <option value="0505">0505</option>
+
+                          <option value="0506">0506</option>
+
+                          <option value="0507">0507</option>
+
+                        </select> -
+                        <input type="text" id="phone2" name="phone2" maxlength="4" class="form-ele short numeric"
+                          title="전화번호 중간자리"> -
+                        <input type="text" id="phone3" name="phone3" maxlength="4" class="form-ele short numeric"
+                          title="전화번호 끝자리">
+                        <input type="hidden" name="phone" id="phone">
+                      </td>
+                    </tr>
+                    <tr style="display: none">
+                      <th scope="row"><label for="mobile1">핸드폰번호</label></th>
+                      <td>
+                        <select name="mobile1" id="mobile1" title="핸드폰번호 앞자리" class="form-ele short">
+
+                          <option value="010">010</option>
+
+                          <option value="011">011</option>
+
+                          <option value="016">016</option>
+
+                          <option value="017">017</option>
+
+                          <option value="018">018</option>
+
+                          <option value="019">019</option>
+
+                        </select> -
+                        <input type="text" id="mobile2" name="mobile2" maxlength="4" class="form-ele short numeric"
+                          title="핸드폰번호 중간자리"> -
+                        <input type="text" id="mobile3" name="mobile3" maxlength="4" class="form-ele short numeric"
+                          title="핸드폰번호 끝자리">
+                        <p class="themeFC">※ 회원 재동의 등 메세지 전달(수신안함 선택시 메세지 수신 불가)</p>
+                        <input type="hidden" name="mobile" id="mobile">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><label for="contact">연락처 <span class="essential">*</span></label></th>
+                      <td>
+                        <select name="contact1" id="contact1" title="연락처번호 앞자리" class="form-ele short">
+                        </select> -
+                        <input type="text" id="contact2" name="contact2" maxlength="4" class="form-ele short numeric"
+                          title="연락처번호 중간자리"> -
+                        <input type="text" id="contact3" name="contact3" maxlength="4" class="form-ele short numeric"
+                          title="연락처번호 끝자리">
+                        <br class="mobileShow3">
+                        <label for="contactType1"><input type="radio" id="contactType1" name="cchktype" value="mobile"
+                            checked title="연락처 핸드폰 선택"> 핸드폰</label>
+                        <label for="contactType2"><input type="radio" id="contactType2" name="cchktype" value="phone"
+                            title="연락처 집 선택"> 집</label>
+                        <p class="themeFC">※ 회원 재동의 등 메세지 전달(수신안함 선택시 메세지 수신 불가)</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><label for="sms_yn">SMS수신 <span class="essential">*</span></label></th>
+                      <td>
+                        <input type="radio" name="sms_yn" value="Y" checked="checked" title="수신" class="mr_5"
+                          title="SMS수신 체크">수신
+                        <input type="radio" name="sms_yn" value="N" title="수신안함" class="mr_5 ml_5"
+                          title="SMS수신 안함 체크">수신안함
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><label for="email_id">이메일 <span class="essential">*</span></label></th>
+                      <td>
+                        <input type="text" id="email_id" name="email_id" title="이메일 아이디 입력" maxlength="20"
+                          class="form-ele auto"> @<br class="mobileShow3">
+                        <input type="text" id="email_domain" name="email_domain" title="이메일 도메인 입력" readonly="readonly"
+                          class="form-ele auto readonly" />
+                        <select name="domainSelect" id="domainSelect" title="이메일 도메인 선택" class="form-ele auto">
+                          <option value="">선택</option>
+
+                          <option value="gmail.com">gmail.com</option>
+
+                          <option value="naver.com">naver.com</option>
+
+                          <option value="hanmail.net">hanmail.net</option>
+
+                          <option value="hotmail.com">hotmail.com</option>
+
+                          <option value="kakao.com">kakao.com</option>
+
+                          <option value="korea.kr">korea.kr</option>
+
+                          <option value="dreamwiz.com">dreamwiz.com</option>
+
+                          <option value="msn.com">msn.com</option>
+
+                          <option value="nate.com">nate.com</option>
+
+                          <option value="lycos.co.kr">lycos.co.kr</option>
+
+                          <option value="yahoo.co.kr">yahoo.co.kr</option>
+
+                          <option value="hanafos.com">hanafos.com</option>
+
+                          <option value="etc">직접입력</option>
+
+                        </select>
+                        <br />
+                        <p class="themeFC">※ 서비스 관련 메시지 전달 시 사용</p>
+                        <input type="hidden" name="email" id="email" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><label for="mailing_yn">메일수신 <span class="essential">*</span></label></th>
+                      <td>
+                        <input type="radio" name="mailing_yn" value="Y" checked="checked" title="메일 수신 체크"
+                          class="mr_5">수신
+                        <input type="radio" name="mailing_yn" value="N" title="메일 수신안함 체크" class="mr_5 ml_5">수신안함
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="custom_btn_box_type2">
+                <span class="btn"><a href="/city/1000438/20019/program.do" title="통합로그인으로 이동">취소</a></span>
+                <span class="btn themeBtn"><a href="#save" id="saveBtn">가입완료</a></span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- //container -->
+  </div>
+  <footer id="footer">
+
+    <!-- footer -->
+    <div id="memberfooter">
+      <div class="footerInner">
+        <ul class="fnb clearfix">
+          <li><a href="/city/1000458/10268/contents.do" class="current">개인정보처리방침</a></li>
+          <li><a href="/city/1000439/10266/contents.do">서비스이용약관</a></li>
+        </ul>
+        <div class="addr">
+          <p>Copyright ⓒ Seongnam City. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+    <!-- //footer -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155568275-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'UA-155568275-1');
+    </script>
+  </footer>
+  <!-- //wrap -->
+
+</body>
+
+</html>

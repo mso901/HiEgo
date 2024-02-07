@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+  <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="css/defult.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/signup.css">
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="src/idcheck.js" defer></script>
+  <script src="src/address.js" defer></script>
+  <script src="src/submit.js"></script>
+</head>
+
+<body>
+  <main>
+    <h1><a href="./index.html"><img src="images/header/logo_hiego.png" alt=""></a></h1>
+    <div class="inner">
+      <h2>회원가입</h2>
+      <form action="#" method="get">
+        <table>
+          <caption>회원가입 정보입력</caption>
+          <colgroup>
+            <col style="width: 130px;">
+            <col>
+          </colgroup>
+          <tr>
+            <th><label for="username">아이디<span class="essential">*</span></label></th>
+            <td><input type="text" id="username" minlength="8" maxlength="15" autocomplete="username">
+              <input type="button" id="idCheck" value="중복확인">
+              <p class="esplanation">영문, 숫자 8~15자 이내로 입력해주세요.</p>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="password">비밀번호<span class="essential">*</span></label></th>
+            <td><input type="password" id="password">
+              <p class="esplanation">10~20자리 영문,숫자,특수문자 중 2종류 이상으로 조합해주세요.</p>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="repassword">비밀번호 확인<span class="essential">*</span></label></th>
+            <td><input type="password" id="repassword">
+              <p class="esplanation">비밀번호를 다시 한번 입력해주세요.</p>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="name">이름<span class="essential">*</span></label></th>
+            <td><input type="text" id="name" autocomplete="name">
+              <p class="esplanation"></p>
+            </td>
+          </tr>
+          <tr class="born">
+            <th><label for="year">생년월일<span class="essential">*</span></label></th>
+            <td><input type="text" id="year"> 년
+              <input type="text" id="month"> 월
+              <input type="text" id="day"> 일
+            </td>
+          </tr>
+          <tr class="address">
+            <th><label for="searchAddressBtn">주소<span class="essential">*</span></label></th>
+            <td>
+              <input type="text" id="sample6_postcode" placeholder="우편번호">
+              <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+              <input type="text" id="sample6_address" placeholder="주소"><br>
+              <input type="text" id="sample6_detailAddress" placeholder="상세주소">
+              <input type="text" id="sample6_extraAddress" placeholder="참고항목">
+            </td>
+          </tr>
+          <tr>
+            <th><label for="phone">연락처<span class="essential">*</span></label></th>
+            <td><input type="text" id="phone" placeholder="-없이 숫자만 입력해주세요" autocomplete="tel">
+              <p class="esplanation"></p>
+            </td>
+          </tr>
+          <tr class="email">
+            <th><label for="email">이메일<span class="essential">*</span></label></th>
+            <td><input type="text" id="email" autocomplete="email"> @
+              <select name="" id="domainSelect">
+                <option value="" disabled selected>선택</option>
+                <option value="gmail">gmail.com</option>
+                <option value="naver">naver.com</option>
+                <option value="daum">daum.net</option>
+                <option value="kakao">kakao.com</option>
+                <option value="msn">msn.com</option>
+                <option value="nate">nate.com</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="sns">
+            <th><label for="sns">SNS수신</label><span class="essential">*</span></label></th>
+            <td>
+              <input type="radio" id="sns" name="snsOption"> 문자,이메일
+              <input type="radio" id="snsSms" name="snsOption"> 문자
+              <input type="radio" id="snsEmail" name="snsOption"> 이메일
+              <input type="radio" id="noSns" name="snsOption"> 수신안함
+              <p class="esplanation">수신안함 선택시 예약관련 내용 수신 불가</p>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <div class="submitBox flex">
+        <button class="cancel">취소</button>
+        <button class="submit">가입완료</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="inner flex">
+      <p><a href=""><img src="images/footer/logo_hiego.png" alt=""></a></p>
+      <div class="f_right">
+        <ul class="flex">
+          <li><a href="">이용약관</a></li>
+          <li><a href=""><strong>개인정보처리방침</strong></a></li>
+          <li><a href="">저작권 보호정책</a></li>
+          <li><a href="">이메일무단수집거부</a></li>
+          <li><a href="">제휴문의</a></li>
+          <li><a href="">광고문의</a></li>
+        </ul>
+        <address>Copyright © mindtest All rights reserved.</address>
+      </div>
+    </div><!--//inner-->
+  </footer>
+</body>
+
+</html>
