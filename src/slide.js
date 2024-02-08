@@ -1,43 +1,61 @@
+/** @format */
+
 $(function () {
   //slide
-  let Width = 800;
+  const Width = 768;
 
   function applySwiper() {
     let screenWidth = $(window).width();
     if (screenWidth < Width) {
-       $(".talk_list").slick({
-         infinite: true,
-         slidesToShow: 1,
-         slidesToScroll: 1,
-       });
-      $(".news_list").slick({
+      $('.news_list').slick({
         slidesToShow: 2,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 560,
+            settings: {
+              slidesToShow: 1,
+            },
+          },
+        ],
+      });
+      $('.talk_list').slick({
+        infinite: true,
+        slidesToShow: 1,
         slidesToScroll: 1,
       });
     } else {
-      $(".b_list").slick({
+      $('.b_list').slick({
         infinite: true,
         slidesToShow: 4,
         slidesToScroll: 2,
         responsive: [
           {
-            breakpoint: 1400,
+            breakpoint: 1460,
             settings: {
               slidesToShow: 3,
             },
           },
           {
-            breakpoint: 1000,
+            breakpoint: 1080,
             settings: {
               slidesToShow: 2,
             },
           },
         ],
       });
-      $(".talk_list").slick({
+      $('.talk_list').slick({
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 2,
+        responsive: [
+          {
+            breakpoint: 1080,
+            settings: {
+              slidesToShow: 2,
+            },
+          },
+        ],
       });
     } //else
   } //function
@@ -47,5 +65,4 @@ $(function () {
   $(window).resize(function () {
     applySwiper();
   }); //slide
-
 });

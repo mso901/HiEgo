@@ -75,10 +75,11 @@ nav .submenu a{
 /*best*/
 .best {
   height: auto;
-  display: block;
   padding: 50px 50px 100px;
 }
-
+.best_inner{
+  display: block;
+}
 .b_text {
   padding: 20px 0 50px;
   width: 100%;

@@ -5,7 +5,7 @@ html {
 }
 body {
   font-size: 1.6rem;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .inner {
@@ -63,7 +63,7 @@ nav li:hover > a::after {
   left: 0;
   top: 70%;
   display: inline-block;
-  content: "";
+  content: '';
   width: 100%;
   height: 12px;
   background-color: rgba(20, 157, 221, 0.6);
@@ -227,11 +227,16 @@ nav .submenu {
 
 /*best*/
 .best {
-  align-items: center;
   height: 600px;
   background-color: rgb(243, 249, 255);
 }
-
+.best_inner {
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 1920px;
+}
 .b_text {
   width: 30%;
   padding: 0 50px;
@@ -273,7 +278,7 @@ nav .submenu {
   left: 0;
   top: 0;
   display: block;
-  content: "";
+  content: '';
   width: 100%;
   height: 100%;
   border-radius: 20px;
@@ -342,7 +347,7 @@ nav .submenu {
 }
 
 .slick-prev:before {
-  content: "\e93c";
+  content: '\e93c';
 }
 
 .slick-next {
@@ -350,7 +355,7 @@ nav .submenu {
 }
 
 .slick-next:before {
-  content: "\e93f";
+  content: '\e93f';
 }
 
 /*news*/
@@ -368,7 +373,7 @@ nav .submenu {
 
 .news ul {
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 50px;
 }
 
@@ -389,8 +394,8 @@ nav .submenu {
 }
 
 .news1 > div {
+  padding-top: 56.25%;
   width: 100%;
-  height: 150px;
   border-radius: 5px;
 }
 
@@ -425,6 +430,11 @@ nav .submenu {
 
 .news .news1 span {
   font-size: 1.6rem;
+}
+@media screen and (max-width:1080px) {
+  .news_list li:last-child{
+    display: none;
+  }
 }
 
 /*talk*/
