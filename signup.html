@@ -12,7 +12,7 @@
   <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <script src="src/idcheck.js" defer></script>
   <script src="src/address.js" defer></script>
-  <script src="src/submit.js"></script>
+  <script src="src/submit.js" defer></script>
 </head>
 
 <body>
@@ -60,13 +60,14 @@
             </td>
           </tr>
           <tr class="address">
-            <th><label for="searchAddressBtn">주소<span class="essential">*</span></label></th>
+            <th><label for="postcode">주소<span class="essential">*</span></label></th>
             <td>
-              <input type="text" id="sample6_postcode" placeholder="우편번호">
-              <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-              <input type="text" id="sample6_address" placeholder="주소"><br>
-              <input type="text" id="sample6_detailAddress" placeholder="상세주소">
-              <input type="text" id="sample6_extraAddress" placeholder="참고항목">
+              <input type="text" id="postcode" placeholder="우편번호">
+              <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><br>
+              <input type="text" id="address" placeholder="주소"><br>
+              <input type="text" id="detailAddress" placeholder="상세주소">
+              <input type="text" id="extraAddress" placeholder="참고항목">
+
             </td>
           </tr>
           <tr>
