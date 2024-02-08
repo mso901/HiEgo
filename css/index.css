@@ -71,10 +71,10 @@ nav li:hover > a::after {
 }
 nav .mainmenu > li {
   position: relative;
-  padding-right: 50px;
+  padding-right: 1%;
   width: 25%;
   line-height: 45px;
-  letter-spacing: 4px;
+  letter-spacing: 1px;
 }
 nav .mainmenu > li > a {
   font-size: 1.8rem;
