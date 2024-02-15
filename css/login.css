@@ -1,0 +1,59 @@
+/** @format */
+
+h1 {
+  padding: 100px 0 50px;
+  text-align: center;
+}
+h1 img {
+  width: 150px;
+}
+form {
+  padding: 20px;
+  width: 520px;
+  margin: auto;
+  color: #666;
+  border-bottom: 1px solid #e5e5e5;
+}
+input {
+  width: 480px;
+  height: 70px;
+  margin-top: 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+}
+input[type='button'] {
+  color: #fff;
+  font-size: 25px;
+  background-color: #5b9cd2;
+}
+input[type='checkbox'] {
+  margin: 0;
+  margin-right: 10px;
+  width: 20px;
+}
+input::placeholder {
+  padding-left: 20px;
+  color: #999;
+}
+.sns_login {
+  padding: 50px 0 100px;
+  width: 520px;
+  margin: auto;
+  color: #666;
+  text-align: center;
+}
+h3 {
+  padding: 50px 0;
+  font-size: 20px;
+  font-weight: normal;
+}
+.sns_login ul {
+  justify-content: center;
+  gap: 40px;
+}
+.sns_login li img {
+  width: 70px;
+}
+.find_account {
+  padding: 60px 0;
+}

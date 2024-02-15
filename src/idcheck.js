@@ -1,4 +1,4 @@
-  document.addEventListener('DOMContentLoaded', function () {
+ 
     const usernameInput = document.getElementById('username');
     const idCheckButton = document.getElementById('idCheck');
 
@@ -28,4 +28,3 @@
       const usernamePattern = /^[a-zA-Z0-9]{8,15}$/;
       return usernamePattern.test(username);
     }
-  });

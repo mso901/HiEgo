@@ -46,7 +46,8 @@ function submit() {
   }
 
   //가입완료
-  alert('가입이 완료되었습니다. (실제 가입 처리를 여기에 추가하세요)');
+  alert('가입이 완료되었습니다.');
+  window.location.href = '../regist_done.html'; 
 }
 
 //입력값이 숫자인지 확인
